@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "watch": "webpack --progress --watch --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jestconfig.json",
+    "test:watch": "jest --config jestconfig.json --watch",
+    "test:cov": "jest --config jestconfig.json --coverage"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,11 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "jest": "^22.4.3",
+    "jest-enzyme": "^6.0.0",
     "node-sass": "^4.8.3",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",

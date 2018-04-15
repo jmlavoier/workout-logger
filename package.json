@@ -1,0 +1,19 @@
+{
+  "name": "workout-logger",
+  "version": "1.0.0",
+  "description": "It's a component based applictation made in React with its ecosystem to log workouts.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmlavoier/workout-logger.git"
+  },
+  "author": "jmlavoier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmlavoier/workout-logger/issues"
+  },
+  "homepage": "https://github.com/jmlavoier/workout-logger#readme"
+}

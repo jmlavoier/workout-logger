@@ -105,3 +105,8 @@ The saga folder was created to combine all sagas of the application.
 
 ### Css
 And finally css is where the general styles are introduced to reset the application, and some root configurations for sass like _variables and _mixins.
+
+## Get started 
+- `yarn start` - *run the project in development mode*
+- `yarn watch` - *watch the project to build the project in development mode*
+

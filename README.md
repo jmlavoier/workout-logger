@@ -50,6 +50,8 @@ It's a component based applictation made in React with its ecosystem to log work
    |- saga
    |- css
 ```
+### Components
+I have started to think in components and create this doc to figure them out [https://docs.google.com/document/d/1TUoup_G8vRHrL5ss8LMCy4Q5m8LPNifeQ5MC9Nc3ooI/edit?usp=sharing](https://docs.google.com/document/d/1TUoup_G8vRHrL5ss8LMCy4Q5m8LPNifeQ5MC9Nc3ooI/edit?usp=sharing)
 
 ### Presentational components
 First of all I created the components module containing all presentational components. Only these components can be styled. These components are leaned on their css and test files.

@@ -1,18 +1,15 @@
 {
-  "setupTestFrameworkScriptFile": "./setupTest.js",
-  "coverageDirectory": "coverage",
+  "setupTestFrameworkScriptFile": "../scripts/setupTest.js",
+  "coverageDirectory": "../coverage",
   "unmockedModulePathPatterns": [
     "react",
     "enzyme",
     "jest-enzyme"
   ],
   "moduleDirectories": [
-    "node_modules",
-    "src"
+    "node_modules"
   ],
-  "roots": [
-    "src"
-  ],
+  "rootDir": "src",
   "snapshotSerializers": ["enzyme-to-json/serializer"],
   "moduleNameMapper": {
     "\\.(css|sass)$": "identity-obj-proxy",

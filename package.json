@@ -8,7 +8,8 @@
     "watch": "webpack --progress --watch --mode development",
     "test": "jest --config jestconfig.json",
     "test:watch": "jest --config jestconfig.json --watch",
-    "test:cov": "jest --config jestconfig.json --coverage"
+    "test:cov": "jest --config jestconfig.json --coverage",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,10 @@
   },
   "homepage": "https://github.com/jmlavoier/workout-logger#readme",
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.1",
+    "@storybook/addon-info": "^3.4.1",
+    "@storybook/cli": "^3.4.1",
+    "@storybook/react": "^3.4.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",

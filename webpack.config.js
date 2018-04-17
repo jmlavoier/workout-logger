@@ -1,5 +1,5 @@
 var path = require('path');
-var webpackRules = require('./webpack.rules');
+var webpackRules = require('./scripts/webpack.rules');
 
 const PATHS = {
   root: path.resolve(__dirname, 'build'),

@@ -3,21 +3,20 @@ import { shallow, mount } from 'enzyme';
 
 import Field from './Field';
 
+const InputMock = ({ value, onChange }) => <input type="text" value={value} onChange={onChange} />;
+
 describe('<Field />', () => {
   it('Should component render prop component', () => {
-    const component = <input value="" />;
+    const wrapper = mount(<Field component={InputMock} />);
 
-    const wrapper = shallow(<Field component={component} />);
-
-    expect(wrapper.find(component)).toHaveLength(1);
+    expect(wrapper.find(InputMock)).toHaveLength(1);
   });
 
   it('Should component set value', () => {
-    const Component = <input value="" />;
-    const value = "value";
+    const value = "ssss";
 
-    const wrapper = shallow(<Field component={Component} value={value} />);
+    const wrapper = shallow(<Field component={InputMock} value={value} />);
 
-    expect(wrapper.find(Component).value).toBe(value);
+    expect(wrapper.find(InputMock).prop('value')).toBe(value);
   });
 });

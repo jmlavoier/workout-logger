@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import ItemList from './Item';
+import ItemList from './ItemList';
 
-const mockItem ={ 
+const mockItem = { 
   timeSpent: '1:00',
   workoutType: 'Run',
   date: '15/04/2018',
@@ -12,12 +12,16 @@ const mockItem ={
 describe('<ItemList/>', () => {
   it('Should component render item', () => {
     const { timeSpent, workoutType, date } = mockItem;
-
-    const wrapper = mount(<Item item={mockItem} />);
-
-    expect(wrapper.find('.time-spent').text()).toBe(timeSpent);
-    expect(wrapper.find('.workout-type').text()).toBe(workoutType);
-    expect(wrapper.find('.date').text()).toBe(date);
+    
+    const wrapper = mount(
+      <table>
+        <tbody>
+          <ItemList item={mockItem} />
+        </tbody>
+      </table>
+    );
+    
+    expect(wrapper).toMatchSnapshot();
   });
 });
 

@@ -6,9 +6,9 @@ import InputTime from './InputTime';
 describe('<InputTime/>', () => {
   it('Should component set value', () => {
     const value = '0:00';
-    const wrapper = mount(<InputTime value={value} />);
+    const wrapper = shallow(<InputTime value={value} />);
 
-    expect(wrapper.find('input').value).toEqual(value);
+    expect(wrapper.prop('value')).toEqual(value);
   });
 });
 

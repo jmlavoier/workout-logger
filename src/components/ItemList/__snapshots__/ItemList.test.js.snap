@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ItemList/> Should component render item 1`] = `
+<table>
+  <tbody>
+    <ItemList
+      item={
+        Object {
+          "date": "15/04/2018",
+          "timeSpent": "1:00",
+          "workoutType": "Run",
+        }
+      }
+    >
+      <tr>
+        <td>
+          1:00
+        </td>
+        <td>
+          Run
+        </td>
+        <td>
+          15/04/2018
+        </td>
+      </tr>
+    </ItemList>
+  </tbody>
+</table>
+`;

@@ -1,5 +1,9 @@
 import React from 'react';
 
-const Container = () => null;
+const Container = ({ children }) => (
+  <div>
+    {children}
+  </div>
+);
 
 export default Container;

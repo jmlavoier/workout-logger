@@ -7,7 +7,7 @@ describe('<Container></Container>', () => {
   it('Should component render children', () => {
     const text = 'content';
   
-    const wrapper = mount(<Container>text</Container>);
+    const wrapper = mount(<Container>{text}</Container>);
   
     expect(wrapper.text()).toEqual(text);
   });

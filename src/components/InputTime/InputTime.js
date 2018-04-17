@@ -1,5 +1,7 @@
 import React from 'react';
 
-const InputTime = () => null;
+const InputTime = ({ value, onChange }) => (
+  <input type="text" value={value} onChange={onChange} />
+);
 
 export default InputTime;

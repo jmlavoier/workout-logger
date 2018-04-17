@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Field = () => null;
+const Field = ({ component:Component, value, onChange }) => (
+  <Component value={value} onChange={onChange} />
+);
 
 export default Field;

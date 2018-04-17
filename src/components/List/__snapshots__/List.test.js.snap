@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List/> Should component list items 1`] = `
+<List
+  items={
+    Array [
+      Object {
+        "date": "15/04/2018",
+        "id": 0,
+        "timeSpent": "1:00",
+        "workoutType": "Run",
+      },
+      Object {
+        "date": "15/04/2018",
+        "id": 1,
+        "timeSpent": "0:30",
+        "workoutType": "Run",
+      },
+    ]
+  }
+>
+  <table>
+    <thead>
+      <tr>
+        <td>
+          Tempo
+        </td>
+        <td>
+          Tipo
+        </td>
+        <td>
+          Data
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <ItemList
+        item={
+          Array [
+            Object {
+              "date": "15/04/2018",
+              "id": 0,
+              "timeSpent": "1:00",
+              "workoutType": "Run",
+            },
+            Object {
+              "date": "15/04/2018",
+              "id": 1,
+              "timeSpent": "0:30",
+              "workoutType": "Run",
+            },
+          ]
+        }
+        key="0"
+      >
+        <tr>
+          <td />
+          <td />
+          <td />
+        </tr>
+      </ItemList>
+      <ItemList
+        item={
+          Array [
+            Object {
+              "date": "15/04/2018",
+              "id": 0,
+              "timeSpent": "1:00",
+              "workoutType": "Run",
+            },
+            Object {
+              "date": "15/04/2018",
+              "id": 1,
+              "timeSpent": "0:30",
+              "workoutType": "Run",
+            },
+          ]
+        }
+        key="1"
+      >
+        <tr>
+          <td />
+          <td />
+          <td />
+        </tr>
+      </ItemList>
+    </tbody>
+  </table>
+</List>
+`;

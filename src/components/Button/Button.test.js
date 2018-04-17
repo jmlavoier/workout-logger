@@ -14,7 +14,7 @@ describe('<Button></Button>', () => {
   it('Should component call click event', () => {
     const value = 'add';
     const onClick = jest.fn();
-    const wrapper = mount(<Button>{value}</Button>);
+    const wrapper = mount(<Button onClick={onClick}>{value}</Button>);
 
     wrapper.simulate('click');
     expect(onClick).toHaveBeenCalled();

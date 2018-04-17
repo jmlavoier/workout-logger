@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from './Box';
+import Container from './Container';
 
-storiesOf('Box', module)
+storiesOf('Container', module)
   .add('Default', withInfo()(() => (
-    <Box>Teste</Box>
+    <Container>Teste</Container>
   )));

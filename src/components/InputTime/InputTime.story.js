@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from './Box';
+import InputTime from './InputTime';
 
-storiesOf('Box', module)
+storiesOf('InputTime', module)
   .add('Default', withInfo()(() => (
-    <Box>Teste</Box>
+    <InputTime value="0:30" />
   )));

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ItemList from '../ItemList';
 
@@ -16,5 +17,9 @@ const List = ({ items }) => (
     </tbody>
   </table>
 );
+
+List.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default List;

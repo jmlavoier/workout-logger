@@ -1,12 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+import App from './components/App';
+
 import './css/main.sass';
 
 render(
-  <div>
-    <h1>Hello Magalu!</h1>
-    <p>Starting project</p>
-  </div>,
+  <App />,
   document.getElementById('root')
 );

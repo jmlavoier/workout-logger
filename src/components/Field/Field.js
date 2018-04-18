@@ -6,7 +6,7 @@ const Field = ({ component:Component, value, onChange }) => (
 );
 
 Field.propTypes = {
-  component: PropTypes.node,
+  component: PropTypes.func,
   value: PropTypes.string,
   onChange: PropTypes.func,
 };

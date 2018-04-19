@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Select = ({ id, name, value, onChange, options }) => (
-  <select type="text" value={value} onChange={onChange} defaultValue={value}>
+  <select type="text" value={value} onChange={onChange}>
     {options.map((option, i) => <option key={i} value={option}>{option}</option>)}
   </select>
 );

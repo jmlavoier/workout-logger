@@ -1,12 +1,13 @@
 import React from 'react';
 
 import Form from 'containers/Form';
+import WorkoutList from 'containers/WorkoutList';
 
 const App = () => (
   <div>
-    <h1>Hello Magalu!</h1>
-    <p>Starting project</p>
+    <h1>Workout Logger</h1>
     <Form />
+    <WorkoutList />
   </div>
 );
 

@@ -11,4 +11,8 @@ Container.propTypes = {
   children: PropTypes.node,
 };
 
+Container.defaultProps = {
+  children: '',
+};
+
 export default Container;

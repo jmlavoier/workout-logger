@@ -6,8 +6,8 @@ const InputTime = ({ value, onChange }) => (
 );
 
 InputTime.propTypes = {
-  value: PropTypes.string,
-  onChange: PropTypes.func,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default InputTime;

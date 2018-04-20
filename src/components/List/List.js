@@ -22,4 +22,8 @@ List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
 };
 
+List.defaultProps = {
+  items: [],
+};
+
 export default List;

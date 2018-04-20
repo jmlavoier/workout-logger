@@ -7,5 +7,5 @@ import './css/main.sass';
 
 render(
   <App />,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

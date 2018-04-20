@@ -17,4 +17,12 @@ ItemList.propTypes = {
   }),
 };
 
+ItemList.defaultProps = {
+  item: {
+    timeSpent: '',
+    workoutType: '',
+    date: '',
+  },
+};
+
 export default ItemList;

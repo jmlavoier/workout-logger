@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 
 import ItemList from './ItemList';
 
-const mockItem = { 
+const mockItem = {
   timeSpent: '1:00',
   workoutType: 'Run',
   date: '15/04/2018',

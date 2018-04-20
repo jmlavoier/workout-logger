@@ -6,5 +6,5 @@ import Select from './Select';
 
 storiesOf('Select', module)
   .add('Default', withInfo()(() => (
-    <Select id="types" name="types" options={['Run', 'Swimming']} value='Swimming' />
+    <Select id="types" name="types" options={['Run', 'Swimming']} value="Swimming" />
   )));

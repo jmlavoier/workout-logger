@@ -9,8 +9,11 @@ const Box = ({ children }) => (
 
 
 Box.propTypes = {
-  children: PropTypes.node,  
+  children: PropTypes.node,
 };
 
+Box.defaultProps = {
+  children: '',
+};
 
 export default Box;

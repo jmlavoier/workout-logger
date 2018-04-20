@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import uid from 'uid';
 
-const Select = ({ id, name, value, onChange, options }) => (
-  <select type="text" value={value} onChange={onChange}>
-    {options.map((option, i) => <option key={i} value={option}>{option}</option>)}
+const Select = ({
+  id, name, value, onChange, options,
+}) => (
+  <select id={id} name={name} type="text" value={value} onChange={onChange}>
+    {options.map(option => <option key={uid()} value={option}>{option}</option>)}
   </select>
 );
 
 Select.propTypes = {
   id: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-  options: PropTypes.array,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
+};
+
+Select.defaultProps = {
+  id: '',
+  options: [],
 };
 
 export default Select;

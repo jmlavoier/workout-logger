@@ -13,9 +13,11 @@ exports[`<App/> Should component match snapshot 1`] = `
             <div>
               <InputTime
                 name="time-spent"
+                onChange={[Function]}
                 value="0:00"
               >
                 <input
+                  onChange={[Function]}
                   type="text"
                   value="0:00"
                 />
@@ -30,8 +32,14 @@ exports[`<App/> Should component match snapshot 1`] = `
                 onChange={[Function]}
                 options={
                   Array [
-                    "Run",
-                    "Swimming",
+                    Object {
+                      "id": "1",
+                      "value": "Run",
+                    },
+                    Object {
+                      "id": "2",
+                      "value": "Swimming",
+                    },
                   ]
                 }
                 value="Run"
@@ -44,13 +52,13 @@ exports[`<App/> Should component match snapshot 1`] = `
                   value="Run"
                 >
                   <option
-                    key="l57e2a9"
+                    key="1"
                     value="Run"
                   >
                     Run
                   </option>
                   <option
-                    key="vyuja86"
+                    key="2"
                     value="Swimming"
                   >
                     Swimming
@@ -63,9 +71,11 @@ exports[`<App/> Should component match snapshot 1`] = `
             <div>
               <InputTime
                 name="date"
+                onChange={[Function]}
                 value="18/04/2018"
               >
                 <input
+                  onChange={[Function]}
                   type="text"
                   value="18/04/2018"
                 />
@@ -74,8 +84,12 @@ exports[`<App/> Should component match snapshot 1`] = `
           </Box>
           <Box>
             <div>
-              <Button>
-                <button>
+              <Button
+                onClick={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                >
                   Add
                 </button>
               </Button>

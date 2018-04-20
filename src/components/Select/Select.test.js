@@ -3,14 +3,18 @@ import { shallow, mount } from 'enzyme';
 
 import Select from './Select';
 
+const optionsMock = [
+  { id: '1', value: 'Run' },
+  { id: '2', value: 'Swimming' },
+];
+
 describe('<Select/>', () => {
   it('Should component render with options', () => {
-    const options = ['Run', 'Swimming'];
     const onChange = jest.fn();
 
-    const wrapper = shallow(<Select id="types" name="types" options={options} value={options[0]} onChange={onChange} />);
+    const wrapper = shallow(<Select id="types" name="types" options={optionsMock} value={optionsMock[0].value} onChange={onChange} />);
 
-    expect(wrapper.find('option')).toHaveLength(options.length);
+    expect(wrapper.find('option')).toHaveLength(optionsMock.length);
   });
 
 });

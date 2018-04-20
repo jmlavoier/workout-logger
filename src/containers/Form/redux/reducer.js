@@ -8,7 +8,7 @@ export const initialState = {
   date: moment().format('L'),
 };
 
-export const form = (state = initialState, action) => {
+const form = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_FIELD: {
       const { fieldName, value } = action.payload;

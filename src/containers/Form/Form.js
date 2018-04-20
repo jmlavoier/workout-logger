@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Box from 'components/Box';
 import Container from 'components/Container';
@@ -11,21 +12,30 @@ const optionsMock = [
   { id: '2', value: 'Swimming' },
 ];
 
-const Form = () => (
+const handleChange = (changeField, fieldName) => (e) => {
+  changeField(fieldName, e.target.value);
+};
+
+const Form = ({ form, changeField }) => (
   <Container>
     <Box>
-      <InputTime name="time-spent" value="0:00" onChange={() => {}} />
+      <InputTime name="time-spent" value={form.timeSpent} onChange={handleChange(changeField, 'timeSpent')} />
     </Box>
     <Box>
-      <Select name="workout-type" options={optionsMock} value="Run" onChange={() => {}} />
+      <Select name="workout-type" options={optionsMock} value={form.workoutType} onChange={handleChange(changeField, 'workoutType')} />
     </Box>
     <Box>
-      <InputTime name="date" value="18/04/2018" onChange={() => {}} />
+      <InputTime name="date" value={form.date} onChange={handleChange(changeField, 'date')} />
     </Box>
     <Box>
       <Button onClick={() => {}} >Add</Button>
     </Box>
   </Container>
 );
+
+Form.propTypes = {
+  form: PropTypes.objectOf(PropTypes.string).isRequired,
+  changeField: PropTypes.func.isRequired,
+};
 
 export default Form;

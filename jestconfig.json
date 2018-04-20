@@ -7,7 +7,8 @@
     "jest-enzyme"
   ],
   "moduleDirectories": [
-    "node_modules"
+    "node_modules",
+    "src"
   ],
   "rootDir": "src",
   "snapshotSerializers": ["enzyme-to-json/serializer"],

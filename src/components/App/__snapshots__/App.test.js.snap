@@ -4,11 +4,178 @@ exports[`<App/> Should component match snapshot 1`] = `
 <App>
   <div>
     <h1>
-      Hello Magalu!
+      Workout Logger
     </h1>
-    <p>
-      Starting project
-    </p>
+    <Form>
+      <Container>
+        <div>
+          <Box>
+            <div>
+              <InputTime
+                name="time-spent"
+                value="0:00"
+              >
+                <input
+                  type="text"
+                  value="0:00"
+                />
+              </InputTime>
+            </div>
+          </Box>
+          <Box>
+            <div>
+              <Select
+                id=""
+                name="workout-type"
+                onChange={[Function]}
+                options={
+                  Array [
+                    "Run",
+                    "Swimming",
+                  ]
+                }
+                value="Run"
+              >
+                <select
+                  id=""
+                  name="workout-type"
+                  onChange={[Function]}
+                  type="text"
+                  value="Run"
+                >
+                  <option
+                    key="l57e2a9"
+                    value="Run"
+                  >
+                    Run
+                  </option>
+                  <option
+                    key="vyuja86"
+                    value="Swimming"
+                  >
+                    Swimming
+                  </option>
+                </select>
+              </Select>
+            </div>
+          </Box>
+          <Box>
+            <div>
+              <InputTime
+                name="date"
+                value="18/04/2018"
+              >
+                <input
+                  type="text"
+                  value="18/04/2018"
+                />
+              </InputTime>
+            </div>
+          </Box>
+          <Box>
+            <div>
+              <Button>
+                <button>
+                  Add
+                </button>
+              </Button>
+            </div>
+          </Box>
+        </div>
+      </Container>
+    </Form>
+    <WorkoutList>
+      <Container>
+        <div>
+          <Box>
+            <div>
+              <List
+                items={
+                  Array [
+                    Object {
+                      "date": "15/04/2018",
+                      "id": 0,
+                      "timeSpent": "1:00",
+                      "workoutType": "Run",
+                    },
+                    Object {
+                      "date": "15/04/2018",
+                      "id": 1,
+                      "timeSpent": "0:30",
+                      "workoutType": "Run",
+                    },
+                  ]
+                }
+              >
+                <table>
+                  <thead>
+                    <tr>
+                      <td>
+                        Tempo
+                      </td>
+                      <td>
+                        Tipo
+                      </td>
+                      <td>
+                        Data
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ItemList
+                      item={
+                        Object {
+                          "date": "15/04/2018",
+                          "id": 0,
+                          "timeSpent": "1:00",
+                          "workoutType": "Run",
+                        }
+                      }
+                      key="0"
+                    >
+                      <tr>
+                        <td>
+                          1:00
+                        </td>
+                        <td>
+                          Run
+                        </td>
+                        <td>
+                          15/04/2018
+                        </td>
+                      </tr>
+                    </ItemList>
+                    <ItemList
+                      item={
+                        Object {
+                          "date": "15/04/2018",
+                          "id": 1,
+                          "timeSpent": "0:30",
+                          "workoutType": "Run",
+                        }
+                      }
+                      key="1"
+                    >
+                      <tr>
+                        <td>
+                          0:30
+                        </td>
+                        <td>
+                          Run
+                        </td>
+                        <td>
+                          15/04/2018
+                        </td>
+                      </tr>
+                    </ItemList>
+                  </tbody>
+                </table>
+              </List>
+            </div>
+          </Box>
+        </div>
+      </Container>
+    </WorkoutList>
   </div>
 </App>
 `;

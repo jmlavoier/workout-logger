@@ -9,6 +9,8 @@
     "test": "jest --config jestconfig.json",
     "test:watch": "jest --config jestconfig.json --watch",
     "test:cov": "jest --config jestconfig.json --coverage",
+    "lint": "esw src/** -w",
+    "lint:fix": "eslint src/** --fix",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "repository": {
@@ -35,6 +37,13 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.3",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-webpack": "^0.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "eslint-watch": "^3.1.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
     "jest-enzyme": "^6.0.0",
@@ -48,6 +57,7 @@
   "dependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react-dom": "^16.3.1",
+    "uid": "^0.0.2"
   }
 }

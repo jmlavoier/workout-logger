@@ -5,9 +5,11 @@ import Field from './Field';
 
 const InputMock = ({ value, onChange }) => <input type="text" value={value} onChange={onChange} />;
 
+const onChange = jest.fn();
+
 describe('<Field />', () => {
   it('Should component render prop component', () => {
-    const wrapper = mount(<Field component={InputMock} />);
+    const wrapper = mount(<Field component={InputMock} onChange={onChange} />);
 
     expect(wrapper.find(InputMock)).toHaveLength(1);
   });
@@ -15,7 +17,7 @@ describe('<Field />', () => {
   it('Should component set value', () => {
     const value = "ssss";
 
-    const wrapper = shallow(<Field component={InputMock} value={value} />);
+    const wrapper = shallow(<Field component={InputMock} value={value} onChange={onChange} />);
 
     expect(wrapper.find(InputMock).prop('value')).toBe(value);
   });

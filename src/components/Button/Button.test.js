@@ -6,7 +6,8 @@ import Button from './Button';
 describe('<Button></Button>', () => {
   it('Should component render children', () => {
     const value = 'add';
-    const wrapper = mount(<Button>{value}</Button>);
+    const onClick = jest.fn();
+    const wrapper = mount(<Button onClick={onClick}>{value}</Button>);
 
     expect(wrapper.text()).toEqual(value);
   });

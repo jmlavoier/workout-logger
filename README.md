@@ -72,12 +72,15 @@ The containers folder has to organize only the containers components to map the 
 |- containers
     |- Form
         |- Form.js
-        |- actions.js
-        |- constants.js
         |- container.js
         |- index.js
-        |- reducer.js
-        |- sagas.js
+        |- redux
+            |- actions.js
+            |- actions.test.js
+            |- constants.js
+            |- reducer.js
+            |- reducer.test.js
+            |- sagas.js
 ```
 
 ### Store

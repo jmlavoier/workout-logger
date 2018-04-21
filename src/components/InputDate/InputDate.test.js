@@ -1,11 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import InputText from './InputText';
+import InputDate from './InputDate';
 
 describe('<InputDate/>', () => {
-  xit('Should component set value', () => {
-    
-  });
+  xit('Should component set value');
 });
-

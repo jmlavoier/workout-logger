@@ -1,1 +1,1 @@
-export { default } from './WorkoutList';
+export { default } from './container';

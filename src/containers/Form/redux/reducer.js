@@ -1,11 +1,9 @@
-import moment from 'moment';
-
 import { CHANGE_FIELD } from './constants';
 
 export const initialState = {
-  timeSpent: '0:00',
+  timeSpent: '0:45',
   workoutType: 'Run',
-  date: moment().format('L'),
+  date: '2018-04-20',
 };
 
 const form = (state = initialState, action) => {

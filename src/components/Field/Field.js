@@ -24,7 +24,11 @@ const Field = ({
   formatValueBeforeChange,
   ...otherProps
 }) => (
-  <Component value={value} onChange={handleChangeEvent(changeField, fieldName, value, validation, formatValueBeforeChange)} {...otherProps} />
+  <Component
+    value={value}
+    onChange={handleChangeEvent(changeField, fieldName, value, validation, formatValueBeforeChange)}
+    {...otherProps}
+  />
 );
 
 Field.propTypes = {

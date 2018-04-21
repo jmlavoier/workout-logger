@@ -5,6 +5,7 @@ import uid from 'uid';
 import Box from 'components/Box';
 import Container from 'components/Container';
 import InputText from 'components/InputText';
+import InputDate from 'components/InputDate';
 import Button from 'components/Button';
 import Select from 'components/Select';
 import Field from 'components/Field';
@@ -27,6 +28,8 @@ const handleClick = (clickAdd, form) => () => {
 
   clickAdd(formSet, uid());
 };
+
+const handleChangeDate = (changeField, fieldName) => date => changeField(fieldName, date.format('YYYY-MM-DD'));
 
 const timeSpentValidation = (event) => {
   const { value } = event.target;
@@ -73,12 +76,11 @@ const Form = ({ form, changeField, clickAdd }) => {
         />
       </Box>
       <Box>
-        <Field
-          component={InputText}
+        <InputDate
           fieldName="date"
           value={date.value}
           isValid={date.isValid}
-          changeField={changeField}
+          onChange={handleChangeDate(changeField, 'date')}
         />
       </Box>
       <Box>

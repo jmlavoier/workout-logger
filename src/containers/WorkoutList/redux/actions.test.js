@@ -2,6 +2,7 @@ import * as actions from './actions';
 import uid from 'uid';
 import {
   CLICK_ADD,
+  CLICK_REMOVE,
   ORDER_BY,
 } from './constants';
 
@@ -25,6 +26,19 @@ describe('WorkoutList actions', () => {
     };
 
     expect(actions.clickAdd(form, id)).toEqual(expectedAction);
+  });
+
+  it('should create an action to add new log', () => {
+    const id = uid();
+
+    const expectedAction = {
+      type: CLICK_REMOVE,
+      payload: {
+        id,
+      },
+    };
+
+    expect(actions.clickRemove(id)).toEqual(expectedAction);
   });
 
   it('should create an action to order list by', () => {

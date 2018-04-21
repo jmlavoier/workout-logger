@@ -3,6 +3,7 @@
 exports[`<List/> Should component list items 1`] = `
 <List
   changeOrder={[Function]}
+  clickRemove={[Function]}
   items={
     Array [
       Object {
@@ -63,6 +64,7 @@ exports[`<List/> Should component list items 1`] = `
           }
         }
         key="0"
+        onClickRemove={[Function]}
       >
         <tr>
           <td>
@@ -73,6 +75,15 @@ exports[`<List/> Should component list items 1`] = `
           </td>
           <td>
             15/04/2018
+          </td>
+          <td>
+            <div
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="presentation"
+            >
+              Del
+            </div>
           </td>
         </tr>
       </ItemList>
@@ -86,6 +97,7 @@ exports[`<List/> Should component list items 1`] = `
           }
         }
         key="1"
+        onClickRemove={[Function]}
       >
         <tr>
           <td>
@@ -96,6 +108,15 @@ exports[`<List/> Should component list items 1`] = `
           </td>
           <td>
             15/04/2018
+          </td>
+          <td>
+            <div
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="presentation"
+            >
+              Del
+            </div>
           </td>
         </tr>
       </ItemList>

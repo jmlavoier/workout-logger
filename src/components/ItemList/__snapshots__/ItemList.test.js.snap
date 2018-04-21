@@ -11,6 +11,7 @@ exports[`<ItemList/> Should component render item 1`] = `
           "workoutType": "Run",
         }
       }
+      onClickRemove={[Function]}
     >
       <tr>
         <td>
@@ -21,6 +22,13 @@ exports[`<ItemList/> Should component render item 1`] = `
         </td>
         <td>
           15/04/2018
+        </td>
+        <td>
+          <div
+            role="presentation"
+          >
+            Del
+          </div>
         </td>
       </tr>
     </ItemList>

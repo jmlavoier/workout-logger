@@ -7,7 +7,11 @@ const handleClickChangeOrder = (changeOrder, fieldName) => () => {
   changeOrder(fieldName);
 };
 
-const List = ({ items, changeOrder }) => (
+const handleClickRemove = clickRemove => id => () => {
+  clickRemove(id);
+};
+
+const List = ({ items, changeOrder, clickRemove }) => (
   <table>
     <thead>
       <tr>
@@ -41,7 +45,7 @@ const List = ({ items, changeOrder }) => (
       </tr>
     </thead>
     <tbody>
-      {items && items.map(item => <ItemList key={item.id} item={item} />)}
+      {items && items.map(item => <ItemList key={item.id} item={item} onClickRemove={handleClickRemove(clickRemove)} />)}
     </tbody>
   </table>
 );
@@ -49,6 +53,7 @@ const List = ({ items, changeOrder }) => (
 List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
   changeOrder: PropTypes.func.isRequired,
+  clickRemove: PropTypes.func.isRequired,
 };
 
 List.defaultProps = {

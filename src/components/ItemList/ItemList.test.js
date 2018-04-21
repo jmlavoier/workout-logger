@@ -16,7 +16,7 @@ describe('<ItemList/>', () => {
     const wrapper = mount(
       <table>
         <tbody>
-          <ItemList item={mockItem} />
+          <ItemList item={mockItem} onClickRemove={() => {}} />
         </tbody>
       </table>
     );

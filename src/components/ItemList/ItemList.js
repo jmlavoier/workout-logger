@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ItemList = ({ item }) => (
+const ItemList = ({ item, onClickRemove }) => (
   <tr>
     <td>{item.timeSpent}</td>
     <td>{item.workoutType}</td>
     <td>{item.date}</td>
+    <td>
+      <div
+        role="presentation"
+        onClick={onClickRemove(item.id)}
+        onKeyPress={onClickRemove(item.id)}
+      >
+        Del
+      </div>
+    </td>
   </tr>
 );
 
@@ -15,6 +24,7 @@ ItemList.propTypes = {
     workoutType: PropTypes.string,
     date: PropTypes.string,
   }),
+  onClickRemove: PropTypes.func.isRequired,
 };
 
 ItemList.defaultProps = {

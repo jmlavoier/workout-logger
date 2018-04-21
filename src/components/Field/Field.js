@@ -2,10 +2,15 @@ import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 
-const handleChangeEvent = _.curry((changeField, fieldName, validation, event) => {
+const handleChangeEvent = _.curry((changeField, fieldName, currentValue, validation, event) => {
+  let valueSet = currentValue;
+  let isValid = true;
+
   if (validation(event)) {
-    changeField(fieldName, event.target.value);
+    valueSet = event.target.value;
+    isValid = false;
   }
+  changeField(fieldName, valueSet, isValid);
 });
 
 const Field = ({
@@ -16,7 +21,7 @@ const Field = ({
   validation,
   ...otherProps
 }) => (
-  <Component value={value} onChange={handleChangeEvent(changeField, fieldName, validation)} {...otherProps} />
+  <Component value={value} onChange={handleChangeEvent(changeField, fieldName, value, validation)} {...otherProps} />
 );
 
 Field.propTypes = {

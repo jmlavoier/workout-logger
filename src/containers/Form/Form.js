@@ -19,7 +19,13 @@ const workoutTypeOptions = [
 ];
 
 const handleClick = (clickAdd, form) => () => {
-  clickAdd(form, uid());
+  const formSet = {
+    timeSpent: form.timeSpent.value,
+    workoutType: form.workoutType.value,
+    date: form.date.value,
+  };
+
+  clickAdd(formSet, uid());
 };
 
 const Form = ({ form, changeField, clickAdd }) => {
@@ -28,13 +34,32 @@ const Form = ({ form, changeField, clickAdd }) => {
   return (
     <Container>
       <Box>
-        <Field component={InputText} fieldName="timeSpent" value={timeSpent} changeField={changeField} />
+        <Field
+          component={InputText}
+          fieldName="timeSpent"
+          value={timeSpent.value}
+          isValid={timeSpent.isValid}
+          changeField={changeField}
+        />
       </Box>
       <Box>
-        <Field component={Select} fieldName="workoutType" value={workoutType} changeField={changeField} options={workoutTypeOptions} />
+        <Field
+          component={Select}
+          fieldName="workoutType"
+          value={workoutType.value}
+          isValid={timeSpent.isValid}
+          changeField={changeField}
+          options={workoutTypeOptions}
+        />
       </Box>
       <Box>
-        <Field component={InputText} fieldName="date" value={date} changeField={changeField} />
+        <Field
+          component={InputText}
+          fieldName="date"
+          value={date.value}
+          isValid={date.isValid}
+          changeField={changeField}
+        />
       </Box>
       <Box>
         <Button onClick={handleClick(clickAdd, form)} >Add</Button>
@@ -44,7 +69,10 @@ const Form = ({ form, changeField, clickAdd }) => {
 };
 
 Form.propTypes = {
-  form: PropTypes.objectOf(PropTypes.string).isRequired,
+  form: PropTypes.objectOf(PropTypes.shape({
+    value: PropTypes.string,
+    isValid: PropTypes.bool,
+  })).isRequired,
   changeField: PropTypes.func.isRequired,
   clickAdd: PropTypes.func.isRequired,
 };

@@ -1,195 +1,203 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App/> Should component match snapshot 1`] = `
-<App>
-  <div>
-    <h1>
-      Workout Logger
-    </h1>
-    <Form>
-      <Container>
-        <div>
-          <Box>
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <App>
+    <div>
+      <h1>
+        Workout Logger
+      </h1>
+      <Connect(Form)>
+        <Form
+          changeField={[Function]}
+          clickAdd={[Function]}
+          form={
+            Object {
+              "date": "04/20/2018",
+              "timeSpent": "0:00",
+              "workoutType": "Run",
+            }
+          }
+        >
+          <Container>
             <div>
-              <InputTime
-                name="time-spent"
-                onChange={[Function]}
-                value="0:00"
-              >
-                <input
-                  onChange={[Function]}
-                  type="text"
-                  value="0:00"
-                />
-              </InputTime>
-            </div>
-          </Box>
-          <Box>
-            <div>
-              <Select
-                id=""
-                name="workout-type"
-                onChange={[Function]}
-                options={
-                  Array [
-                    Object {
-                      "id": "1",
-                      "value": "Run",
-                    },
-                    Object {
-                      "id": "2",
-                      "value": "Swimming",
-                    },
-                  ]
-                }
-                value="Run"
-              >
-                <select
-                  id=""
-                  name="workout-type"
-                  onChange={[Function]}
-                  type="text"
-                  value="Run"
-                >
-                  <option
-                    key="1"
+              <Box>
+                <div>
+                  <InputTime
+                    name="time-spent"
+                    onChange={[Function]}
+                    value="0:00"
+                  >
+                    <input
+                      onChange={[Function]}
+                      type="text"
+                      value="0:00"
+                    />
+                  </InputTime>
+                </div>
+              </Box>
+              <Box>
+                <div>
+                  <Select
+                    id=""
+                    name="workout-type"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "id": "1",
+                          "value": "Run",
+                        },
+                        Object {
+                          "id": "2",
+                          "value": "Swimming",
+                        },
+                        Object {
+                          "id": "3",
+                          "value": "Bike",
+                        },
+                        Object {
+                          "id": "4",
+                          "value": "Stretch",
+                        },
+                        Object {
+                          "id": "5",
+                          "value": "Yoga",
+                        },
+                        Object {
+                          "id": "6",
+                          "value": "Gym",
+                        },
+                      ]
+                    }
                     value="Run"
                   >
-                    Run
-                  </option>
-                  <option
-                    key="2"
-                    value="Swimming"
+                    <select
+                      id=""
+                      name="workout-type"
+                      onChange={[Function]}
+                      type="text"
+                      value="Run"
+                    >
+                      <option
+                        key="1"
+                        value="Run"
+                      >
+                        Run
+                      </option>
+                      <option
+                        key="2"
+                        value="Swimming"
+                      >
+                        Swimming
+                      </option>
+                      <option
+                        key="3"
+                        value="Bike"
+                      >
+                        Bike
+                      </option>
+                      <option
+                        key="4"
+                        value="Stretch"
+                      >
+                        Stretch
+                      </option>
+                      <option
+                        key="5"
+                        value="Yoga"
+                      >
+                        Yoga
+                      </option>
+                      <option
+                        key="6"
+                        value="Gym"
+                      >
+                        Gym
+                      </option>
+                    </select>
+                  </Select>
+                </div>
+              </Box>
+              <Box>
+                <div>
+                  <InputTime
+                    name="date"
+                    onChange={[Function]}
+                    value="04/20/2018"
                   >
-                    Swimming
-                  </option>
-                </select>
-              </Select>
-            </div>
-          </Box>
-          <Box>
-            <div>
-              <InputTime
-                name="date"
-                onChange={[Function]}
-                value="18/04/2018"
-              >
-                <input
-                  onChange={[Function]}
-                  type="text"
-                  value="18/04/2018"
-                />
-              </InputTime>
-            </div>
-          </Box>
-          <Box>
-            <div>
-              <Button
-                onClick={[Function]}
-              >
-                <button
-                  onClick={[Function]}
-                >
-                  Add
-                </button>
-              </Button>
-            </div>
-          </Box>
-        </div>
-      </Container>
-    </Form>
-    <WorkoutList>
-      <Container>
-        <div>
-          <Box>
-            <div>
-              <List
-                items={
-                  Array [
-                    Object {
-                      "date": "15/04/2018",
-                      "id": 0,
-                      "timeSpent": "1:00",
-                      "workoutType": "Run",
-                    },
-                    Object {
-                      "date": "15/04/2018",
-                      "id": 1,
-                      "timeSpent": "0:30",
-                      "workoutType": "Run",
-                    },
-                  ]
-                }
-              >
-                <table>
-                  <thead>
-                    <tr>
-                      <td>
-                        Tempo
-                      </td>
-                      <td>
-                        Tipo
-                      </td>
-                      <td>
-                        Data
-                      </td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <ItemList
-                      item={
-                        Object {
-                          "date": "15/04/2018",
-                          "id": 0,
-                          "timeSpent": "1:00",
-                          "workoutType": "Run",
-                        }
-                      }
-                      key="0"
+                    <input
+                      onChange={[Function]}
+                      type="text"
+                      value="04/20/2018"
+                    />
+                  </InputTime>
+                </div>
+              </Box>
+              <Box>
+                <div>
+                  <Button
+                    onClick={[Function]}
+                  >
+                    <button
+                      onClick={[Function]}
                     >
-                      <tr>
-                        <td>
-                          1:00
-                        </td>
-                        <td>
-                          Run
-                        </td>
-                        <td>
-                          15/04/2018
-                        </td>
-                      </tr>
-                    </ItemList>
-                    <ItemList
-                      item={
-                        Object {
-                          "date": "15/04/2018",
-                          "id": 1,
-                          "timeSpent": "0:30",
-                          "workoutType": "Run",
-                        }
-                      }
-                      key="1"
-                    >
-                      <tr>
-                        <td>
-                          0:30
-                        </td>
-                        <td>
-                          Run
-                        </td>
-                        <td>
-                          15/04/2018
-                        </td>
-                      </tr>
-                    </ItemList>
-                  </tbody>
-                </table>
-              </List>
+                      Add
+                    </button>
+                  </Button>
+                </div>
+              </Box>
             </div>
-          </Box>
-        </div>
-      </Container>
-    </WorkoutList>
-  </div>
-</App>
+          </Container>
+        </Form>
+      </Connect(Form)>
+      <Connect(WorkoutList)>
+        <WorkoutList
+          changeOrder={[Function]}
+          workoutList={Array []}
+        >
+          <Container>
+            <div>
+              <Box>
+                <div>
+                  <List
+                    changeOrder={[Function]}
+                    items={Array []}
+                  >
+                    <table>
+                      <thead>
+                        <tr>
+                          <td>
+                            Tempo
+                          </td>
+                          <td>
+                            Tipo
+                          </td>
+                          <td>
+                            Data
+                          </td>
+                        </tr>
+                      </thead>
+                      <tbody />
+                    </table>
+                  </List>
+                </div>
+              </Box>
+            </div>
+          </Container>
+        </WorkoutList>
+      </Connect(WorkoutList)>
+    </div>
+  </App>
+</Provider>
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 
-const handleChangeEvent = _.curry((changeField, fieldName, currentValue, validation, event) => {
+const handleChangeEvent = _.curry((changeField, fieldName, currentValue, validation, formatValueBeforeChange, event) => {
   let valueSet = currentValue;
   let isValid = true;
 
@@ -10,7 +10,7 @@ const handleChangeEvent = _.curry((changeField, fieldName, currentValue, validat
     valueSet = event.target.value;
     isValid = false;
   }
-  changeField(fieldName, valueSet, isValid);
+  changeField(fieldName, formatValueBeforeChange(valueSet), isValid);
 });
 
 const Field = ({
@@ -19,9 +19,10 @@ const Field = ({
   fieldName,
   value,
   validation,
+  formatValueBeforeChange,
   ...otherProps
 }) => (
-  <Component value={value} onChange={handleChangeEvent(changeField, fieldName, value, validation)} {...otherProps} />
+  <Component value={value} onChange={handleChangeEvent(changeField, fieldName, value, validation, formatValueBeforeChange)} {...otherProps} />
 );
 
 Field.propTypes = {
@@ -29,11 +30,13 @@ Field.propTypes = {
   value: PropTypes.string.isRequired,
   fieldName: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
+  formatValueBeforeChange: PropTypes.func,
   validation: PropTypes.func,
 };
 
 Field.defaultProps = {
   validation: () => true,
+  formatValueBeforeChange: value => value,
 };
 
 export default Field;

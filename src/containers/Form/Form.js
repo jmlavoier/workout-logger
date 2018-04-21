@@ -4,7 +4,7 @@ import uid from 'uid';
 
 import Box from 'components/Box';
 import Container from 'components/Container';
-import InputTime from 'components/InputTime';
+import InputText from 'components/InputText';
 import Button from 'components/Button';
 import Select from 'components/Select';
 
@@ -31,13 +31,13 @@ const Form = ({ form, changeField, clickAdd }) => {
   return (
     <Container>
       <Box>
-        <InputTime name="time-spent" value={timeSpent} onChange={handleChange(changeField, 'timeSpent')} />
+        <InputText name="time-spent" value={timeSpent} onChange={handleChange(changeField, 'timeSpent')} />
       </Box>
       <Box>
         <Select name="workout-type" options={workoutTypeOptions} value={workoutType} onChange={handleChange(changeField, 'workoutType')} />
       </Box>
       <Box>
-        <InputTime name="date" value={date} onChange={handleChange(changeField, 'date')} />
+        <InputText name="date" value={date} onChange={handleChange(changeField, 'date')} />
       </Box>
       <Box>
         <Button onClick={handleClick(clickAdd, form)} >Add</Button>

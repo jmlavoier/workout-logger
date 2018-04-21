@@ -33,7 +33,7 @@ exports[`<App/> Should component match snapshot 1`] = `
             <div>
               <Box>
                 <div>
-                  <InputTime
+                  <InputText
                     name="time-spent"
                     onChange={[Function]}
                     value="0:45"
@@ -43,7 +43,7 @@ exports[`<App/> Should component match snapshot 1`] = `
                       type="text"
                       value="0:45"
                     />
-                  </InputTime>
+                  </InputText>
                 </div>
               </Box>
               <Box>
@@ -131,7 +131,7 @@ exports[`<App/> Should component match snapshot 1`] = `
               </Box>
               <Box>
                 <div>
-                  <InputTime
+                  <InputText
                     name="date"
                     onChange={[Function]}
                     value="2018-04-20"
@@ -141,7 +141,7 @@ exports[`<App/> Should component match snapshot 1`] = `
                       type="text"
                       value="2018-04-20"
                     />
-                  </InputTime>
+                  </InputText>
                 </div>
               </Box>
               <Box>

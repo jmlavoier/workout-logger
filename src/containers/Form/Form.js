@@ -7,6 +7,7 @@ import Container from 'components/Container';
 import InputText from 'components/InputText';
 import Button from 'components/Button';
 import Select from 'components/Select';
+import Field from 'components/Field';
 
 const workoutTypeOptions = [
   { id: '1', value: 'Run' },
@@ -16,10 +17,6 @@ const workoutTypeOptions = [
   { id: '5', value: 'Yoga' },
   { id: '6', value: 'Gym' },
 ];
-
-const handleChange = (changeField, fieldName) => (e) => {
-  changeField(fieldName, e.target.value);
-};
 
 const handleClick = (clickAdd, form) => () => {
   clickAdd(form, uid());
@@ -31,13 +28,13 @@ const Form = ({ form, changeField, clickAdd }) => {
   return (
     <Container>
       <Box>
-        <InputText name="time-spent" value={timeSpent} onChange={handleChange(changeField, 'timeSpent')} />
+        <Field component={InputText} fieldName="timeSpent" value={timeSpent} changeField={changeField} />
       </Box>
       <Box>
-        <Select name="workout-type" options={workoutTypeOptions} value={workoutType} onChange={handleChange(changeField, 'workoutType')} />
+        <Field component={Select} fieldName="workoutType" value={workoutType} changeField={changeField} options={workoutTypeOptions} />
       </Box>
       <Box>
-        <InputText name="date" value={date} onChange={handleChange(changeField, 'date')} />
+        <Field component={InputText} fieldName="date" value={date} changeField={changeField} />
       </Box>
       <Box>
         <Button onClick={handleClick(clickAdd, form)} >Add</Button>

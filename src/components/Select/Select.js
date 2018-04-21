@@ -11,13 +11,17 @@ const Select = ({
 
 Select.propTypes = {
   id: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     value: PropTypes.string,
   })),
+};
+
+Select.defaultProps = {
+  name: '',
 };
 
 Select.defaultProps = {

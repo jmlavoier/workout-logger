@@ -2,6 +2,7 @@
 
 exports[`<List/> Should component list items 1`] = `
 <List
+  changeOrder={[Function]}
   items={
     Array [
       Object {
@@ -23,13 +24,31 @@ exports[`<List/> Should component list items 1`] = `
     <thead>
       <tr>
         <td>
-          Tempo
+          <div
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="presentation"
+          >
+            Tempo
+          </div>
         </td>
         <td>
-          Tipo
+          <div
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="presentation"
+          >
+            Tipo
+          </div>
         </td>
         <td>
-          Data
+          <div
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="presentation"
+          >
+            Data
+          </div>
         </td>
       </tr>
     </thead>

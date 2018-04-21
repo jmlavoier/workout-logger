@@ -164,7 +164,7 @@ exports[`<App/> Should component match snapshot 1`] = `
       <Connect(WorkoutList)>
         <WorkoutList
           changeOrder={[Function]}
-          workoutList={Array []}
+          items={Array []}
         >
           <Container>
             <div>
@@ -178,13 +178,31 @@ exports[`<App/> Should component match snapshot 1`] = `
                       <thead>
                         <tr>
                           <td>
-                            Tempo
+                            <div
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                              role="presentation"
+                            >
+                              Tempo
+                            </div>
                           </td>
                           <td>
-                            Tipo
+                            <div
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                              role="presentation"
+                            >
+                              Tipo
+                            </div>
                           </td>
                           <td>
-                            Data
+                            <div
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                              role="presentation"
+                            >
+                              Data
+                            </div>
                           </td>
                         </tr>
                       </thead>

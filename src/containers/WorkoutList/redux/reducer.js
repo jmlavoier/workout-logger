@@ -5,33 +5,57 @@ import {
   ORDER_BY,
 } from './constants';
 
-export const initialState = [];
+export const initialState = {
+  orderBy: {
+    field: 'date',
+    asc: true,
+  },
+  items: [],
+};
 
 const workoutList = (state = initialState, action) => {
   switch (action.type) {
     case CLICK_ADD: {
       const { form, id } = action.payload;
+      const { items } = state;
 
-      return [
+      return {
         ...state,
-        {
-          id,
-          ...form,
-        },
-      ];
+        items: [
+          ...items,
+          {
+            id,
+            ...form,
+          },
+        ],
+      };
     }
 
     case CLICK_REMOVE: {
       const { id } = action.payload;
+      const { items } = state;
 
-      return [
-        ...state.filter(workout => workout.id !== id),
-      ];
+      return {
+        ...state,
+        items: [
+          ...items.filter(workout => workout.id !== id),
+        ],
+      };
     }
 
     case ORDER_BY: {
-      const { field, asc } = action.payload;
-      return _.orderBy(state, [field], [asc ? 'asc' : 'desc']);
+      const { field } = action.payload;
+      const { items, orderBy } = state;
+
+      const asc = (field === orderBy.field) ? !orderBy.asc : true;
+
+      return {
+        orderBy: {
+          field,
+          asc,
+        },
+        items: _.orderBy(items, [field], [asc ? 'asc' : 'desc']),
+      };
     }
 
     default: {

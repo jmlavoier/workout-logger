@@ -11,10 +11,9 @@ export const clickAdd = (form, id) => ({
   },
 });
 
-export const orderBy = (field, asc) => ({
+export const orderBy = field => ({
   type: ORDER_BY,
   payload: {
     field,
-    asc,
   },
 });

@@ -3,13 +3,41 @@ import PropTypes from 'prop-types';
 
 import ItemList from '../ItemList';
 
-const List = ({ items }) => (
+const handleClickChangeOrder = (changeOrder, fieldName) => () => {
+  changeOrder(fieldName);
+};
+
+const List = ({ items, changeOrder }) => (
   <table>
     <thead>
       <tr>
-        <td>Tempo</td>
-        <td>Tipo</td>
-        <td>Data</td>
+        <td>
+          <div
+            role="presentation"
+            onClick={handleClickChangeOrder(changeOrder, 'timeSpent')}
+            onKeyPress={handleClickChangeOrder(changeOrder, 'timeSpent')}
+          >
+          Tempo
+          </div>
+        </td>
+        <td>
+          <div
+            role="presentation"
+            onClick={handleClickChangeOrder(changeOrder, 'workoutType')}
+            onKeyPress={handleClickChangeOrder(changeOrder, 'workoutType')}
+          >
+          Tipo
+          </div>
+        </td>
+        <td>
+          <div
+            role="presentation"
+            onClick={handleClickChangeOrder(changeOrder, 'date')}
+            onKeyPress={handleClickChangeOrder(changeOrder, 'date')}
+          >
+          Data
+          </div>
+        </td>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +48,7 @@ const List = ({ items }) => (
 
 List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
+  changeOrder: PropTypes.func.isRequired,
 };
 
 List.defaultProps = {

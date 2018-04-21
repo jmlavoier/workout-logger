@@ -20,7 +20,7 @@ const mockList = [
 
 describe('<List/>', () => {
   it('Should component list items', () => {
-    const wrapper = mount(<List items={mockList} />);
+    const wrapper = mount(<List items={mockList} changeOrder={() => {}} />);
 
     expect(wrapper.find('tbody tr')).toHaveLength(mockList.length);
     expect(wrapper).toMatchSnapshot();

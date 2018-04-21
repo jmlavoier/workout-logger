@@ -6,16 +6,16 @@ import Container from 'components/Container';
 import Box from 'components/Box';
 import List from 'components/List';
 
-const WorkoutList = ({ changeOrder, workoutList }) => (
+const WorkoutList = ({ changeOrder, items }) => (
   <Container>
     <Box>
-      <List items={workoutList} changeOrder={changeOrder} />
+      <List items={items} changeOrder={changeOrder} />
     </Box>
   </Container>
 );
 
 WorkoutList.propTypes = {
-  workoutList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
   changeOrder: PropTypes.func.isRequired,
 };
 

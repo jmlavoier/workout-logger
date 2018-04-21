@@ -19,18 +19,22 @@ describe('WorkoutList reducer', () => {
       date: '2018-04-18',
     };
 
-    expect(reducer([], {
+    expect(reducer(initialState, {
       type: CLICK_ADD,
       payload: {
         id,
         form,
       }
-    })).toEqual([
-      { 
-        id,
-        ...form,
-      }
-    ]);
+    })).toEqual({
+      ...initialState,
+      items: [
+        ...initialState.items,
+        {
+          id,
+          ...form,
+        },
+      ]
+    });
   });
 
   it('should handle CLICK_REMOVE', () => {
@@ -41,72 +45,102 @@ describe('WorkoutList reducer', () => {
       date: '2018-04-18',
     }
 
-    expect(reducer([form], {
+    const state = {
+      ...initialState,
+      items: [form],
+    }
+
+    expect(reducer(state, {
       type: CLICK_REMOVE,
       payload: {
         id: form.id,
       }
-    })).toEqual([]);
+    })).toEqual({
+      ...initialState,
+      items: [],
+    });
   });
 
   it('should handle ORDER_BY date (asc)', () => {
-    const workoutList = [
-      {
-        id: 'xqiu',
-        timeSpent: '0:45',
-        workoutType: 'Swimming',
-        date:  '2018-04-20',
+    const state = {
+      orderBy: {
+        field: 'date',
+        asc: true,
       },
-      {
-        id: 'xd3e',
-        timeSpent: '0:15',
-        workoutType: 'Swimming',
-        date:  '2018-04-18',
-      },
+      items: [
+        {
+          id: 'xd3e',
+          timeSpent: '0:15',
+          workoutType: 'Swimming',
+          date:  '2018-04-18',
+        },
+        {
+          id: 'xqiu',
+          timeSpent: '0:45',
+          workoutType: 'Swimming',
+          date:  '2018-04-20',
+        },
+      ],
+    };
+
+    const expectedItems = [
+      state.items[1],
+      state.items[0],
     ];
 
-    const expectedWorkoutList = [
-      workoutList[1],
-      workoutList[0],
-    ];
-
-    expect(reducer(workoutList, {
+    expect(reducer(state, {
       type: ORDER_BY,
       payload: {
         field: 'date',
-        asc: true,
       }
-    })).toEqual(expectedWorkoutList);
+    })).toEqual({
+      orderBy: {
+        field: 'date',
+        asc: false,
+      },
+      items: expectedItems,
+    });
   });
 
   it('should handle ORDER_BY timeSpent (asc)', () => {
-    const workoutList = [
-      {
-        id: 'xqiu',
-        timeSpent: '0:45',
-        workoutType: 'Swimming',
-        date:  '2018-04-20',
-      },
-      {
-        id: 'xd3e',
-        timeSpent: '0:10',
-        workoutType: 'Swimming',
-        date:  '2018-04-18',
-      },
+    const state = {
+      ...initialState,
+      items: [
+        {
+          id: 'xqiu',
+          timeSpent: '0:45',
+          workoutType: 'Swimming',
+          date:  '2018-04-20',
+        },
+        {
+          id: 'xd3e',
+          timeSpent: '0:15',
+          workoutType: 'Swimming',
+          date:  '2018-04-18',
+        },
+      ],
+    };
+
+    const field = 'timeSpent';
+    const asc = true;
+
+    const expectedItems = [
+      state.items[1],
+      state.items[0],
     ];
 
-    const expectedWorkoutList = [
-      workoutList[1],
-      workoutList[0],
-    ];
-
-    expect(reducer(workoutList, {
+    expect(reducer(state, {
       type: ORDER_BY,
       payload: {
-        field: 'timeSpent',
-        asc: true,
+        field,
+        asc,
       }
-    })).toEqual(expectedWorkoutList);
+    })).toEqual({
+      orderBy: {
+        field,
+        asc,
+      },
+      items: expectedItems,
+    });
   });
-
 });

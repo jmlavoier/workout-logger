@@ -29,16 +29,14 @@ describe('WorkoutList actions', () => {
 
   it('should create an action to order list by', () => {
     const field = 'timeSpent';
-    const asc = true;
 
     const expectedAction = {
       type: ORDER_BY,
       payload: {
         field,
-        asc,
       },
     };
 
-    expect(actions.orderBy(field, asc)).toEqual(expectedAction);
+    expect(actions.orderBy(field)).toEqual(expectedAction);
   });
 });

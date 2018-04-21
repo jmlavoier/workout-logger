@@ -8,6 +8,7 @@ module.exports = {
     ],
     "rules": {
         "strict": 0,
+        "no-restricted-globals": ["error", "event", "fdescribe"],
         'jsx-a11y/anchor-has-content': 2,
         'jsx-a11y/href-no-hash': false,
         'jsx-a11y/label-has-for': 2,

@@ -7,7 +7,7 @@ import Form from './Form';
 const mapStateToProps = ({ form }) => ({ form });
 
 const mapDispatchToProps = dispatch => ({
-  changeField: (fieldName, value) => dispatch(changeField(fieldName, value)),
+  changeField: (fieldName, value, isValid) => dispatch(changeField(fieldName, value, isValid)),
   clickAdd: (form, id) => dispatch(clickAdd(form, id)),
 });
 

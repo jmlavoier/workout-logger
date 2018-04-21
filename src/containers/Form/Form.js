@@ -9,8 +9,6 @@ import Button from 'components/Button';
 import Select from 'components/Select';
 import Field from 'components/Field';
 
-import { parseDateEngToBr, parseDateBrToEng } from 'utils';
-
 const workoutTypeOptions = [
   { id: '1', value: 'Run' },
   { id: '2', value: 'Swimming' },
@@ -32,18 +30,16 @@ const handleClick = (clickAdd, form) => () => {
 
 const timeSpentValidation = (event) => {
   const { value } = event.target;
-  const [hours, minutes] = value.split(':');
-  const minutesLength = String(minutes).length;
+  const [, minutes] = value.split(':');
+  const parsedMinutes = parseInt(minutes, 10);
+  const minutesLength = String(parsedMinutes).length;
+  const isMinuteANumber = !isNaN(parsedMinutes);
 
-  if (hours > 24) {
+  if (isMinuteANumber && minutesLength === 1 && parsedMinutes >= 6 && parsedMinutes <= 9) {
     return false;
   }
 
-  if (minutesLength === 1 && minutes >= 6 && minutes <= 9) {
-    return false;
-  }
-
-  if (minutes > 59) {
+  if (isMinuteANumber && parsedMinutes > 59) {
     return false;
   }
 
@@ -63,6 +59,7 @@ const Form = ({ form, changeField, clickAdd }) => {
           isValid={timeSpent.isValid}
           changeField={changeField}
           validation={timeSpentValidation}
+          mask={[/\d/, ':', /\d/, /\d/]}
         />
       </Box>
       <Box>

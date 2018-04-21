@@ -3,13 +3,15 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 
 const handleChangeEvent = _.curry((changeField, fieldName, currentValue, validation, formatValueBeforeChange, event) => {
-  let valueSet = currentValue;
+  let valueSet = event.target.value;
   let isValid = true;
+  const parsedValue = parseInt(currentValue, 10);
 
-  if (validation(event)) {
-    valueSet = event.target.value;
+  if (!validation(event)) {
+    valueSet = !isNaN(parsedValue) ? String(parsedValue) : '';
     isValid = false;
   }
+
   changeField(fieldName, formatValueBeforeChange(valueSet), isValid);
 });
 

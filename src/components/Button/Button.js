@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+import styles from './Button.sass';
+
+const getClasses = () => classNames(styles.button);
 
 const Button = ({ children, onClick }) => (
-  <button onClick={onClick}>{children}</button>
+  <button className={getClasses()} onClick={onClick}>{children}</button>
 );
 
 Button.propTypes = {

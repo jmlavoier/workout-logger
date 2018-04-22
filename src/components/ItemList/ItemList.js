@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import IconTrash from './IconTrash';
+
+import styles from './ItemList.sass';
+
 const ItemList = ({ item, onClickRemove }) => (
-  <tr>
+  <tr className={styles['item-list']}>
     <td>{item.timeSpent}</td>
     <td>{item.workoutType}</td>
     <td>{item.date}</td>
@@ -12,7 +16,7 @@ const ItemList = ({ item, onClickRemove }) => (
         onClick={onClickRemove(item.id)}
         onKeyPress={onClickRemove(item.id)}
       >
-        Del
+        <IconTrash />
       </div>
     </td>
   </tr>

@@ -53,8 +53,8 @@ const Form = ({ form, changeField, clickAdd }) => {
   const { timeSpent, workoutType, date } = form;
 
   return (
-    <Container>
-      <Box>
+    <Container className="form" justify="center">
+      <Box className="time-spent">
         <Field
           component={InputText}
           fieldName="timeSpent"
@@ -65,7 +65,7 @@ const Form = ({ form, changeField, clickAdd }) => {
           mask={[/\d/, ':', /\d/, /\d/]}
         />
       </Box>
-      <Box>
+      <Box className="workout-type">
         <Field
           component={Select}
           fieldName="workoutType"
@@ -75,7 +75,7 @@ const Form = ({ form, changeField, clickAdd }) => {
           options={workoutTypeOptions}
         />
       </Box>
-      <Box>
+      <Box className="date">
         <InputDate
           fieldName="date"
           value={date.value}
@@ -83,7 +83,7 @@ const Form = ({ form, changeField, clickAdd }) => {
           onChange={handleChangeDate(changeField, 'date')}
         />
       </Box>
-      <Box>
+      <Box className="save">
         <Button onClick={handleClick(clickAdd, form)} >Add</Button>
       </Box>
     </Container>

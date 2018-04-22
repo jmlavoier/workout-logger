@@ -12,5 +12,5 @@ const mockItem = {
 
 storiesOf('ItemList', module)
   .add('Default', withInfo()(() => (
-    <ItemList item={mockItem} />
+    <ItemList item={mockItem} onClickRemove={() => {}} />
   )));

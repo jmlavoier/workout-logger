@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ItemList from '../ItemList';
+import styles from './List.sass';
+
 
 const handleClickChangeOrder = (changeOrder, fieldName) => () => {
   changeOrder(fieldName);
@@ -12,7 +14,7 @@ const handleClickRemove = clickRemove => id => () => {
 };
 
 const List = ({ items, changeOrder, clickRemove }) => (
-  <table>
+  <table className={styles.list} >
     <thead>
       <tr>
         <td>
@@ -41,6 +43,9 @@ const List = ({ items, changeOrder, clickRemove }) => (
           >
           Data
           </div>
+        </td>
+        <td>
+          &nbsp;
         </td>
       </tr>
     </thead>

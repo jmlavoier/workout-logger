@@ -10,6 +10,11 @@ import Button from 'components/Button';
 import Select from 'components/Select';
 import Field from 'components/Field';
 
+import {
+  timeSpentValidation,
+  timeSpentBeforeChange,
+} from './validations';
+
 const workoutTypeOptions = [
   { id: '1', value: 'Run' },
   { id: '2', value: 'Swimming' },
@@ -31,24 +36,6 @@ const handleClick = (clickAdd, form) => () => {
 
 const handleChangeDate = (changeField, fieldName) => date => changeField(fieldName, date.format('YYYY-MM-DD'));
 
-const timeSpentValidation = (event) => {
-  const { value } = event.target;
-  const [, minutes] = value.split(':');
-  const parsedMinutes = parseInt(minutes, 10);
-  const minutesLength = String(parsedMinutes).length;
-  const isMinuteANumber = !isNaN(parsedMinutes);
-
-  if (isMinuteANumber && minutesLength === 1 && parsedMinutes >= 6 && parsedMinutes <= 9) {
-    return false;
-  }
-
-  if (isMinuteANumber && parsedMinutes > 59) {
-    return false;
-  }
-
-  return true;
-};
-
 const Form = ({ form, changeField, clickAdd }) => {
   const { timeSpent, workoutType, date } = form;
 
@@ -63,6 +50,7 @@ const Form = ({ form, changeField, clickAdd }) => {
           changeField={changeField}
           validation={timeSpentValidation}
           mask={[/\d/, ':', /\d/, /\d/]}
+          formatValueBeforeChange={timeSpentBeforeChange}
         />
       </Box>
       <Box className="workout-type">

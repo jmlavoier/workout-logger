@@ -17,17 +17,17 @@ const workoutList = (state = initialState, action) => {
   switch (action.type) {
     case CLICK_ADD: {
       const { form, id } = action.payload;
-      const { items } = state;
+      const { items, orderBy } = state;
 
       return {
         ...state,
-        items: [
+        items: _.orderBy([
           ...items,
           {
             id,
             ...form,
           },
-        ],
+        ], [orderBy.field], [orderBy.asc ? 'asc' : 'desc']),
       };
     }
 

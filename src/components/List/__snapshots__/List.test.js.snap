@@ -20,6 +20,12 @@ exports[`<List/> Should component list items 1`] = `
       },
     ]
   }
+  orderBy={
+    Object {
+      "asc": true,
+      "field": "teste",
+    }
+  }
 >
   <table
     className="list"
@@ -27,31 +33,67 @@ exports[`<List/> Should component list items 1`] = `
     <thead>
       <tr>
         <td>
-          <div
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            role="presentation"
+          <OrderButton
+            changeOrder={[Function]}
+            fieldName="timeSpent"
+            orderBy={
+              Object {
+                "asc": true,
+                "field": "teste",
+              }
+            }
           >
-            Tempo
-          </div>
+            <div
+              className="order-button"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="presentation"
+            >
+              Tempo
+            </div>
+          </OrderButton>
         </td>
         <td>
-          <div
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            role="presentation"
+          <OrderButton
+            changeOrder={[Function]}
+            fieldName="workoutType"
+            orderBy={
+              Object {
+                "asc": true,
+                "field": "teste",
+              }
+            }
           >
-            Tipo
-          </div>
+            <div
+              className="order-button"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="presentation"
+            >
+              Tipo
+            </div>
+          </OrderButton>
         </td>
         <td>
-          <div
-            onClick={[Function]}
-            onKeyPress={[Function]}
-            role="presentation"
+          <OrderButton
+            changeOrder={[Function]}
+            fieldName="date"
+            orderBy={
+              Object {
+                "asc": true,
+                "field": "teste",
+              }
+            }
           >
-            Data
-          </div>
+            <div
+              className="order-button"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="presentation"
+            >
+              Data
+            </div>
+          </OrderButton>
         </td>
         <td>
            
@@ -81,7 +123,7 @@ exports[`<List/> Should component list items 1`] = `
             Run
           </td>
           <td>
-            15/04/2018
+            20/04/2015
           </td>
           <td>
             <div
@@ -134,7 +176,7 @@ exports[`<List/> Should component list items 1`] = `
             Run
           </td>
           <td>
-            15/04/2018
+            20/04/2015
           </td>
           <td>
             <div

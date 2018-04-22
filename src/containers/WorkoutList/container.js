@@ -3,7 +3,10 @@ import WorkoutList from './WorkoutList';
 
 import { orderBy, clickRemove } from './redux/actions';
 
-const mapStateToProps = ({ workoutList }) => ({ items: workoutList.items });
+const mapStateToProps = ({ workoutList }) => ({
+  items: workoutList.items,
+  orderBy: workoutList.orderBy,
+});
 
 const mapDispatchToProps = dispatch => ({
   changeOrder: fieldName => dispatch(orderBy(fieldName)),

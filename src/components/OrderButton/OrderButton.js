@@ -13,7 +13,12 @@ const handleClickChangeOrder = (changeOrder, fieldName) => () => {
   changeOrder(fieldName);
 };
 
-const OrderButton = ({ children, changeOrder, fieldName, orderBy }) => (
+const OrderButton = ({
+  children,
+  changeOrder,
+  fieldName,
+  orderBy,
+}) => (
   <div
     className={getClasses(orderBy, fieldName)}
     role="presentation"

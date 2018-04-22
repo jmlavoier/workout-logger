@@ -207,6 +207,37 @@ exports[`<List/> Should component list items 1`] = `
           </td>
         </tr>
       </ItemList>
+      <ItemFooter
+        items={
+          Array [
+            Object {
+              "date": "15/04/2018",
+              "id": 0,
+              "timeSpent": "1:00",
+              "workoutType": "Run",
+            },
+            Object {
+              "date": "15/04/2018",
+              "id": 1,
+              "timeSpent": "0:30",
+              "workoutType": "Run",
+            },
+          ]
+        }
+      >
+        <tr
+          className="item-footer"
+        >
+          <td
+            colSpan="4"
+          >
+            <strong>
+              01:30
+               hours of exercices 
+            </strong>
+          </td>
+        </tr>
+      </ItemFooter>
     </tbody>
   </table>
 </List>

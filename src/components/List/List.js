@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import Container from 'components/Container';
 import Box from 'components/Box';
 import OrderButton from 'components/OrderButton';
+import ItemList from 'components/ItemList';
+import ItemFooter from 'components/ItemFooter';
 
-import ItemList from '../ItemList';
 import styles from './List.sass';
-
 
 const handleClickRemove = clickRemove => id => () => {
   clickRemove(id);
@@ -54,6 +54,7 @@ const List = ({
           </td>
         </tr>
       )}
+      <ItemFooter items={items} />
     </tbody>
   </table>
 );

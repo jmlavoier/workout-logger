@@ -22,7 +22,7 @@ describe('<List/>', () => {
   it('Should component list items', () => {
     const wrapper = mount(<List items={mockList} changeOrder={() => {}} clickRemove={() => {}} orderBy={{ field: 'teste', asc: true }} />);
 
-    expect(wrapper.find('tbody tr')).toHaveLength(mockList.length);
+    expect(wrapper.find('tbody tr')).toHaveLength(mockList.length + 1);
     expect(wrapper).toMatchSnapshot();
   });
 });

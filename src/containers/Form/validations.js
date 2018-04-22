@@ -20,13 +20,61 @@ export const timeSpentValidation = (event) => {
 export const timeSpentBeforeChange = (value) => {
   const [hours, minutes] = value.split(':');
 
-  const zeroLeft = minutes[0] === '0';
+  const hoursReplaced = String(hours).replace(/_/g, ' ');
+  const minutesReplaced = String(minutes).replace(/_/g, ' ');
 
-  const parsedHours = parseInt(hours, 10);
-  const parsedMinutes = parseInt(minutes, 10);
-
-  const hoursSet = !isNaN(parsedHours) ? parsedHours : '';
-  const minutessSet = !isNaN(parsedMinutes) ? parsedMinutes : '';
-
-  return `${hoursSet}:${zeroLeft ? '0' : ''}${minutessSet}`;
+  return `${hoursReplaced}:${minutesReplaced}`;
 };
+
+export const formSubmitValidation = (form) => {
+  const {
+    timeSpent,
+    date,
+  } = form;
+
+  const [hours, minutes] = timeSpent.split(':');
+  const dateValue = date;
+
+  const hoursReplaced = hours.replace(' ', '');
+  const minutesReplaced = minutes.replace(' ', '');
+
+  if (isNaN(parseInt(minutesReplaced, 10))) {
+    return {
+      status: false,
+      field: 'timeSpent',
+    };
+  }
+
+  if (parseInt(hoursReplaced, 10) === 0 && parseInt(minutesReplaced, 10) === 0) {
+    return {
+      status: false,
+      field: 'timeSpent',
+    };
+  }
+
+  if (isNaN(parseInt(minutesReplaced, 10))) {
+    return {
+      status: false,
+      field: 'timeSpent',
+    };
+  }
+
+  if (minutesReplaced.length < 2) {
+    return {
+      status: false,
+      field: 'timeSpent',
+    };
+  }
+
+  if (dateValue === '') {
+    return {
+      status: false,
+      field: 'date',
+    };
+  }
+
+  return {
+    status: true,
+  };
+};
+

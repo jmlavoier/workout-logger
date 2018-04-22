@@ -13,6 +13,7 @@ import Field from 'components/Field';
 import {
   timeSpentValidation,
   timeSpentBeforeChange,
+  formSubmitValidation,
 } from './validations';
 
 const workoutTypeOptions = [
@@ -24,17 +25,27 @@ const workoutTypeOptions = [
   { id: '6', value: 'Gym' },
 ];
 
-const handleClick = (clickAdd, form) => () => {
+const handleClick = (clickAdd, form, changeField) => () => {
   const formSet = {
     timeSpent: form.timeSpent.value,
     workoutType: form.workoutType.value,
     date: form.date.value,
   };
 
+  const { status, field } = formSubmitValidation(formSet);
+  if (status === false) {
+    changeField(field, formSet[field], status);
+    return;
+  }
+
   clickAdd(formSet, uid());
 };
 
-const handleChangeDate = (changeField, fieldName) => date => changeField(fieldName, date.format('YYYY-MM-DD'));
+const handleChangeDate = (changeField, fieldName) => (date) => {
+  if (date) {
+    changeField(fieldName, date.format('YYYY-MM-DD'), true);
+  }
+};
 
 const Form = ({ form, changeField, clickAdd }) => {
   const { timeSpent, workoutType, date } = form;
@@ -72,7 +83,7 @@ const Form = ({ form, changeField, clickAdd }) => {
         />
       </Box>
       <Box className="save">
-        <Button onClick={handleClick(clickAdd, form)} >Add</Button>
+        <Button onClick={handleClick(clickAdd, form, changeField)} >Add</Button>
       </Box>
     </Container>
   );

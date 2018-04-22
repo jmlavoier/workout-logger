@@ -12,12 +12,19 @@ const getClasses = isValid => classNames(styles['input-date'], {
   [styles['has-error']]: !isValid,
 });
 
+const getValue = value => (value ? moment(value, 'YYYY-MM-DD') : moment());
+
 const InputDate = ({
   value,
   onChange,
   isValid,
 }) => (
-  <DatePicker className={getClasses(isValid)} selected={moment(value, 'YYYY-MM-DD')} onChange={onChange} dateFormat="DD/MM/YYYY" />
+  <DatePicker
+    className={getClasses(isValid)}
+    selected={getValue(value)}
+    onChange={onChange}
+    dateFormat="DD/MM/YYYY"
+  />
 );
 
 InputDate.propTypes = {

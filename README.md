@@ -30,7 +30,7 @@ It's a component based applictation made in React with its ecosystem to log work
 - JavaScript - ES6+ (Babel);
 - UI components - React 16;
 - Component documentation - Storybook;
-- State management - Redux, React Redux, Redux Saga;
+- State management - Redux, React Redux;
 - CSS preprocessor - Sass;
 - Modules - Webpack, CSS Modules;
 - Unit tests - Jest, Enzyme;
@@ -47,7 +47,6 @@ It's a component based applictation made in React with its ecosystem to log work
    |- components
    |- containers
    |- store
-   |- saga
    |- css
 ```
 ### Components
@@ -80,7 +79,6 @@ The containers folder has to organize only the containers components to map the 
             |- constants.js
             |- reducer.js
             |- reducer.test.js
-            |- sagas.js
 ```
 
 ### Store
@@ -90,24 +88,36 @@ The store folder was created to combine the "thousands and thousands" reducers o
 
 ```
 form: {
-  timeSpent: <String>,
-  workoutType: <String>,
-  date: <String>,
+  timeSpent: {
+    value: <String>,
+    isValid: <Boolean>
+  },
+  workoutType: {
+    value: <String>,
+    isValid: <Boolean>
+  },
+  date: {
+    value: <String>,
+    isValid: <Boolean>
+  },
 }
 
-workoutList: [
-  {
-    id: <Integer>
-    timeSpent: <String>,
-    workoutType: <String>,
-    date: <String>,
+workoutList: {
+  orderBy: {
+    field: <String>,
+    asc: <Boolean>
   },
-  ...
-]
+  items: [
+    {
+      id: <String>
+      timeSpent: <String>,
+      workoutType: <String>,
+      date: <String>,
+    },
+    ...
+  ]
+}
 ```
-
-### Saga
-The saga folder was created to combine all sagas of the application.
 
 ### Css
 And finally css is where the general styles are introduced to reset the application, and some root configurations for sass like _variables and _mixins.
@@ -115,4 +125,11 @@ And finally css is where the general styles are introduced to reset the applicat
 ## Get started 
 - `yarn start` - *run the project in development mode*
 - `yarn watch` - *watch the project to build the project in development mode*
+- `yarn test` - *run tests*
+- `yarn test:watch` - *watch the tests*
+- `yarn test:cov` - *see the coverage*
+- `yarn storybook` - *run storybook server to see the styled components*
+- `yarn lint` - *run lint*
+- `yarn lint:fix` - *run and fix some lint issues*
+
 

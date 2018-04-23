@@ -10,7 +10,7 @@ const iconTrasD = `
 
 const IconTrash = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-    <path d={iconTrasD} fill="#f1f1f1" />
+    <path d={iconTrasD} fill="rgba(253, 69, 63, 0.8)" />
   </svg>
 );
 

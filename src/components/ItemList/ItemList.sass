@@ -1,12 +1,22 @@
-.item-list
-  td
-    padding: 5px
+@import 'css/variables'
 
+.item-list
+  &:hover
+    background-color: rgba($color-blue-secondary, 0.2)  
+
+  td
+    padding: 10px
 
   td:nth-child(4) > div
     padding: 5px 4px 3px 4px
     cursor: pointer
     text-align: center
-    background-color: #e52d27
+
+.odd
+  background-color: rgba($color-blue-secondary, 0.1)
+
+.even
+  background-color: transparent
+
 
         

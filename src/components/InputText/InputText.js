@@ -17,7 +17,7 @@ const InputText = ({
 }) => {
   if (mask) {
     return (
-      <MaskedInput className={getClasses(isValid)} type="text" mask={mask} value={value} onChange={onChange} placeholder="00:00" guide />
+      <MaskedInput className={getClasses(isValid)} type="text" mask={mask} value={value} onChange={onChange} placeholder="0:00" guide />
     );
   }
   return (<input type="text" value={value} onChange={onChange} />);

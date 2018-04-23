@@ -44,7 +44,7 @@ const List = ({
     </thead>
     <tbody>
       {items.length > 0 ? (
-        items.map(item => <ItemList key={item.id} item={item} onClickRemove={handleClickRemove(clickRemove)} />)
+        items.map((item, i) => <ItemList key={item.id} item={item} odd={(i % 2) !== 0} onClickRemove={handleClickRemove(clickRemove)} />)
       ) : (
         <tr>
           <td colSpan="4">

@@ -1,8 +1,10 @@
+import moment from 'moment';
+
 import { CHANGE_FIELD } from './constants';
 
 export const initialState = {
   timeSpent: {
-    value: '0:45',
+    value: '0:00',
     isValid: true,
   },
   workoutType: {
@@ -10,7 +12,7 @@ export const initialState = {
     isValid: true,
   },
   date: {
-    value: '2018-04-20',
+    value: moment().format('YYYY-MM-DD'),
     isValid: true,
   },
 };

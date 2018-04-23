@@ -1,5 +1,7 @@
 # Workout Logger Challenge
 
+**Demo:** [https://jmlavoier.github.io/workout-logger/](https://jmlavoier.github.io/workout-logger/)
+
 ## Desafio
 Você deve desenvolver o front-end de um registro de atividades físicas.
 
